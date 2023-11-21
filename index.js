@@ -19,6 +19,23 @@ app.use(express.urlencoded({
 app.use(express.json())
 
 //rotas
+app.post("/delete", (req, res)=>{
+    const { id } = req.body
+    
+    const sql = `
+        DELETE FROM books
+        WHERE id = ${id}
+    `
+
+    conn.query(sql, (error) =>{
+        if (error){
+            return console.log(error)
+        }
+
+        res.redirect("/")
+    })
+})
+
 app.post("/edit/save", (req,res)=>{
     const { id, title, pageqty } = req.body
 
@@ -39,6 +56,7 @@ app.post("/edit/save", (req,res)=>{
 
 app.post("/register/save", (req, res)=> {
     const{ title, pageqty } = req.body
+
     const query = `
     INSERT INTO books (title, pageqty)
     VALUES ('${title}', ${pageqty})
@@ -54,12 +72,12 @@ app.post("/register/save", (req, res)=> {
     })
 })
 
-app.get("/edit/:id", (req, res) =>{
-    const id = req.params.id
+app.get("/edit/:id_livro", (req, res) =>{
+    const id_livro = req.params.id_livro
 
     const sql = `
         SELECT * FROM books
-        WHERE id = ${id}
+        WHERE id = ${id_livro}
     `
 
     conn.query(sql, (error, data)=>{
@@ -73,12 +91,12 @@ app.get("/edit/:id", (req, res) =>{
     })
 })
 
-app.get("/book/:id", (req, res) => {
-    const id = req.params.id
+app.get("/book/:id_livro", (req, res) => {
+    const id_livro = req.params.id_livro
 
     const sql = `
         SELECT * FROM books
-        WHERE id=${id}
+        WHERE id=${id_livro}
     `
 
     conn.query(sql, (error, data) => {
