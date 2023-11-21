@@ -24,7 +24,7 @@ header{
 header h1{
     margin-bottom: 1rem;
 
-}
+} 
 
 header ul{
     display: flex;
@@ -61,35 +61,35 @@ main > h2{
     font-size: 1rem;
 }
 
-.button .mais{
+.buttons .mais{
     border: 1px solid #007bff;
     background: #007bff;
     color: white;
 }
 
-.button .mais:hover{
+.buttons .mais:hover{
     background: white;
     color: #007bff;
 }
 
-.button .editar{
+.buttons .editar{
     border: 1px solid #ffc107;
     background: #ffc107;
     color: black;
 }
 
-.button .editar:hover{
+.buttons .editar:hover{
     background: white;
     color: #ffc107;
 }
 
-.button .excluir{
+.buttons .excluir{
     border: 1px solid #dc3545;
     background: #dc3545;
     color: white;
 }
 
-.button .excluir:hover{
+.buttons .excluir:hover{
     background: white;
     color: #dc3545;
     cursor: pointer;

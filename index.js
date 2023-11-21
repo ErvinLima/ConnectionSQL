@@ -24,7 +24,7 @@ app.post("/delete", (req, res)=>{
     
     const sql = `
         DELETE FROM books
-        WHERE id = ${id}
+        WHERE id_livro = ${id}
     `
 
     conn.query(sql, (error) =>{
@@ -42,7 +42,7 @@ app.post("/edit/save", (req,res)=>{
     const sql = `
         UPDATE books
         Set title = '${title}', pageqty = '${pageqty}'
-        WHERE id = ${id}
+        WHERE id_livro = ${id}
     `
 
     conn.query(sql, (error)=>{
@@ -77,7 +77,7 @@ app.get("/edit/:id_livro", (req, res) =>{
 
     const sql = `
         SELECT * FROM books
-        WHERE id = ${id_livro}
+        WHERE id_livro = ${id_livro}
     `
 
     conn.query(sql, (error, data)=>{
@@ -96,7 +96,7 @@ app.get("/book/:id_livro", (req, res) => {
 
     const sql = `
         SELECT * FROM books
-        WHERE id=${id_livro}
+        WHERE id_livro=${id_livro}
     `
 
     conn.query(sql, (error, data) => {

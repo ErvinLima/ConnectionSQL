@@ -6,11 +6,11 @@
         <h3>titulo: {{this.title}}</h3>
         <p>quantidade de paginas: {{this.pageqty}}</p>
 
-        <div class="bottons">
-            <a href="/book/{{this.id}}" class="mais">Ver mais</a>
-            <a href="/edit/{{this.id}}" class="editar">Editar</a>
+        <div class="buttons">
+            <a href="/book/{{this.id_livro}}" class="mais">Ver mais</a>
+            <a href="/edit/{{this.id_livro}}" class="editar">Editar</a>
             <form action="/delete" method="post">
-                <input type="hidden" name="id" value="{{this.id}}">
+                <input type="hidden" name="id" value="{{this.id_livro}}">
                 <button class="excluir">Excluir</button>
             </form>
         </div>
